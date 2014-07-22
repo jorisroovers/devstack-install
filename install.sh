@@ -37,7 +37,6 @@ ask_yes_no(){
 
 ## BEGIN SCRIPT ##
 
-
 options=("stable/havana" "stable/icehouse" "master")
 branch=$(ask_question_options "Select a devstack branch: ")
 echo "Chosen branch: $branch"
@@ -58,6 +57,11 @@ then
         ENABLED_SERVICES+=,q-vpn
     fi   
 fi
+
+# First updated setuptools to deal with 
+# https://bugs.launchpad.net/python-openstackclient/+bug/1326811
+sudo pip install --upgrade setuptools
+
 
 #apt-get update
 #apt-get install -qqy git
