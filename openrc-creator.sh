@@ -35,9 +35,9 @@ then
     if [ -e "$src" ]; then
         echo "File $filename already exists, skipping filewrite."
     else
-        echo "OS_USERNAME=$OS_USERNAME" >> $filename
-        echo "OS_AUTH_URL=$OS_AUTH_URL" >> $filename
-        echo "OS_TENANT_NAME=$OS_TENANT_NAME" >> $filename
-        echo "OS_PASSWORD=$OS_PASSWORD" >> $filename
+        echo "export OS_USERNAME=$OS_USERNAME" >> $filename
+        echo "export OS_AUTH_URL=$OS_AUTH_URL" >> $filename
+        echo "export OS_TENANT_NAME=$OS_TENANT_NAME" >> $filename
+        echo "export OS_PASSWORD=$OS_PASSWORD" >> $filename
     fi
 fi
